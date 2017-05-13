@@ -16,7 +16,7 @@ if (module.hot) {
 
 ReactDOM.render(
 	<div>
-		Home
+		Home 2
 	</div>,
 	getMountPoint()
 );
