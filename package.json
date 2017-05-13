@@ -1,0 +1,58 @@
+{
+  "name": "pushpad-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node ./src/server/index.ts",
+    "hot-server": "webpack-dev-server --hot --config ./webpack.config.dev.js",
+    "db-install": "cross-env COMMAND=create_dev_dbs PGPASSWORD=@Pushpad ts-node ./db/installDB.ts",
+    "db-drop": "cross-env COMMAND=drop_dev_dbs PGPASSWORD=@Pushpad ts-node ./db/installDB.ts",
+    "db-generate": "cross-env COMMAND=generate_scripts PGPASSWORD=@Pushpad ts-node ./db/installDB.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrerpena/pushpad-ts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrerpena/pushpad-ts/issues"
+  },
+  "homepage": "https://github.com/andrerpena/pushpad-ts#readme",
+  "devDependencies": {
+    "@types/node": "^7.0.5",
+    "awesome-typescript-loader": "^3.0.0-beta.18",
+    "css-loader": "^0.26.1",
+    "extract-text-webpack-plugin": "^2.0.0-beta.5",
+    "file-loader": "^0.9.0",
+    "node-sass": "^4.3.0",
+    "nodemon": "^1.11.0",
+    "react-hot-loader": "^3.0.0-beta.6",
+    "sass-loader": "^4.1.1",
+    "source-map-loader": "^0.1.6",
+    "style-loader": "^0.13.1",
+    "ts-node": "^2.0.0",
+    "typescript": "^2.1.5",
+    "webpack": "2.1.0-beta.21"
+  },
+  "dependencies": {
+    "@types/colors": "^1.1.1",
+    "@types/express": "^4.0.35",
+    "@types/node": "^7.0.5",
+    "@types/react": "^15.0.2",
+    "@types/react-dom": "^0.14.21",
+    "@types/webpack": "^2.2.5",
+    "bootstrap": "^4.0.0-alpha.6",
+    "colors": "^1.1.2",
+    "cross-env": "^3.1.4",
+    "express": "^4.14.0",
+    "font-awesome": "^4.7.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "ts-loader": "^2.0.0",
+    "webpack-dev-middleware": "^1.6.1",
+    "webpack-dev-server": "^2.3.0"
+  }
+}
