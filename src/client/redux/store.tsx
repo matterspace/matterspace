@@ -2,15 +2,12 @@ import * as Redux from 'redux';
 import thunk from 'redux-thunk';
 import reducers from './reducers';
 
-declare var module: { hot: any };
-declare var window: { devToolsExtension: any };
-
 export function configureStore(initialState = {}) {
     let middleware = Redux.applyMiddleware(thunk);
 
     if (process.env.NODE_ENV !== 'production') {
         /*eslint-disable*/
-        const devToolsExtension = window.devToolsExtension;
+        const devToolsExtension = (window as any).devToolsExtension;
         /*eslint-enable*/
         if (typeof devToolsExtension === 'function') {
             middleware = Redux.compose(middleware, devToolsExtension());
@@ -19,11 +16,10 @@ export function configureStore(initialState = {}) {
 
     const store = Redux.createStore(reducers, initialState, middleware);
     
-    if (module.hot) {
-        module.hot.accept('./reducers', () => {
-            /*eslint-disable*/
-            store.replaceReducer(require('./reducers').default);
-            /*eslint-enable*/
+    if ((module as any).hot) {
+        (module as any).hot.accept('./reducers.tsx', () => {
+            const nexRootReducer = require('./reducers.tsx').default;
+            store.replaceReducer(nexRootReducer);
         });
     }
 

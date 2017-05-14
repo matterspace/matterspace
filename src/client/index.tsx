@@ -2,6 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { configureStore } from './redux/store';
 import { Provider } from 'react-redux';
+import Router from './router';
 require('./styles/styles.scss');
 require('../../node_modules/bootstrap/dist/css/bootstrap.css');
 require('../../node_modules/font-awesome/css/font-awesome.css');
@@ -16,9 +17,7 @@ if (module.hot) {
 
 ReactDOM.render(
     <Provider store={store}>
-        <div>
-            Home 2
-	    </div>
+        <Router />
     </Provider>,
     document.getElementById("app")
 );
