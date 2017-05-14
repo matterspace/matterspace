@@ -17,7 +17,7 @@ if (module.hot) {
 ReactDOM.render(
     <Provider store={store}>
         <div>
-            Home
+            Home 2
 	    </div>
     </Provider>,
     document.getElementById("app")

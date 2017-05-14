@@ -6,6 +6,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "ts-node ./src/server/index.ts",
+        "start-watch": "nodemon",
         "hot-server": "webpack-dev-server --hot --config ./webpack.config.dev.js",
         "db-install": "cross-env COMMAND=create_dev_dbs PGPASSWORD=@Pushpad ts-node ./db/installDB.ts",
         "db-drop": "cross-env COMMAND=drop_dev_dbs PGPASSWORD=@Pushpad ts-node ./db/installDB.ts",
