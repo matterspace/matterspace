@@ -1,22 +1,24 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import { configureStore } from './redux/store';
+import { Provider } from 'react-redux';
 require('./styles/styles.scss');
 require('../../node_modules/bootstrap/dist/css/bootstrap.css');
 require('../../node_modules/font-awesome/css/font-awesome.css');
 
-const getMountPoint = () => {
-	return document.getElementById("app");
-};
-
 declare var module: { hot: any };
 
-if (module.hot) {  
-    module.hot.accept();  
+const store = configureStore();
+
+if (module.hot) {
+    module.hot.accept();
 }
 
 ReactDOM.render(
-	<div>
-		Home
-	</div>,
-	getMountPoint()
+    <Provider store={store}>
+        <div>
+            Home
+	    </div>
+    </Provider>,
+    document.getElementById("app")
 );
