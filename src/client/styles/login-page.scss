@@ -1,0 +1,66 @@
+@import '_variables';
+
+.login-page-wrapper {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    .login-card {
+        background-color: $color-dark-light;
+        border-radius: $radius-md;
+        box-shadow: 0 0 8px $color-shadow;
+    
+        display: flex;
+        flex-direction: column;
+
+        width: 300px;
+
+        .title {
+            padding: $gutter-md;
+        }
+
+        .body {
+            border-top: 1px solid $color-dark;
+            padding: $gutter-md;
+            display: flex;
+            flex-direction: column;
+
+            a.social-button {
+                margin: $gutter-sm 0;
+                text-decoration: none;
+                color: $color-dark;          
+                background-color: $color-white;      
+                border-radius: $radius-md * 2 $radius-md $radius-md $radius-md * 2; // this is a hack is it is beautiful :(
+
+                .fa {
+                    padding: $gutter-sm;
+                    width: 40px;
+                    text-align: center;
+                    color: $color-white;
+                    border-radius: $radius-md 0 0 $radius-md;
+
+                    &.fa-facebook {
+                        background-color: #3b5998;
+                    }
+
+                    &.fa-google {
+                        background-color: #dd4b39;
+                    }
+
+                    &.fa-linkedin {
+                        background-color: #007bb5;
+                    }
+                }
+
+                .text {
+                    margin-left: $gutter-md;
+                }
+                
+            }
+
+        }
+    }
+}
