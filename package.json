@@ -10,7 +10,9 @@
     "hot-server": "webpack-dev-server --hot --config ./webpack.config.dev.js",
     "db-install": "cross-env COMMAND=create_dev_dbs PGPASSWORD=@Pushpad ts-node ./db/installDB.ts",
     "db-drop": "cross-env COMMAND=drop_dev_dbs PGPASSWORD=@Pushpad ts-node ./db/installDB.ts",
-    "db-generate": "cross-env COMMAND=generate_scripts PGPASSWORD=@Pushpad ts-node ./db/installDB.ts"
+    "db-generate": "cross-env COMMAND=generate_scripts PGPASSWORD=@Pushpad ts-node ./db/installDB.ts",
+    "tslint": "tslint src/**/*.ts?(x)",
+    "tslint-fix": "tslint --fix src/**/*.ts?(x)"
   },
   "repository": {
     "type": "git",
@@ -34,8 +36,9 @@
     "source-map-loader": "^0.2.1",
     "style-loader": "^0.17.0",
     "ts-node": "^3.0.4",
+    "tslint": "^5.2.0",
     "tslint-react": "^3.0.0",
-    "typescript": "^2.3.2",
+    "typescript": "^2.2.2",
     "webpack": "^2.5.1"
   },
   "dependencies": {

@@ -15,7 +15,7 @@ export function configureStore(initialState = {}) {
     }
 
     const store = Redux.createStore(reducers, initialState, middleware);
-    
+
     if ((module as any).hot) {
         (module as any).hot.accept('./reducers.tsx', () => {
             const nexRootReducer = require('./reducers.tsx').default;
@@ -24,4 +24,4 @@ export function configureStore(initialState = {}) {
     }
 
     return store;
-};
+}

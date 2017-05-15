@@ -1,13 +1,20 @@
-import React from 'react';
-import LoggedUserDropdown from './LoggedUserDropdown';
+import * as React from 'react';
+import { ComponentProps } from '../types/ComponentTypes';
+import { ILoggedUser } from '../types/LoggedUser';
+import { LoggedUserDropdown } from './LoggedUserDropdown';
+
+const stubLoggedUser: ILoggedUser = {
+    displayName: 'André Pena',
+    id: 0,
+    photoUrl: '0293840293',
+};
 
 const TopMenu = () => (
     <ul className="top-menu">
         <li>
-            <LoggedUserDropdown />
+            <LoggedUserDropdown loggedUser={stubLoggedUser} />
         </li>
     </ul>
 );
-
 
 export default TopMenu;

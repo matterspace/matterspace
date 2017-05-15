@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { ComponentProps } from '../types/ComponentTypes';
 
-const FormRow = (props: ComponentProps) => (
+const FormRow = (props: React.Props<{}>) => (
     <div className="form-row">
         {props.children}
     </div>

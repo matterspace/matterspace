@@ -1,7 +1,12 @@
 import * as React from 'react';
 import { ComponentProps } from '../types/ComponentTypes';
 
-const InputGroup = ({ addOnBefore, addOnAfter, children }) => {
+export interface IInputGroupProps extends React.Props<{}> {
+    addOnBefore: string;
+    addOnAfter: string;
+}
+
+const InputGroup = ({ addOnBefore, addOnAfter, children }: IInputGroupProps) => {
     const addOnBeforeComponent = addOnBefore ? <span className="input-group-addon">{addOnBefore}</span> : null;
     const addOnAfterComponent = addOnAfter ? <span className="input-group-addon">{addOnAfter}</span> : null;
 

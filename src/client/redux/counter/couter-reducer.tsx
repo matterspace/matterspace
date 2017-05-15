@@ -1,16 +1,16 @@
-import { CounterOperationType, IncrementDecrementAction, } from './counter-types';
 import { Action, ActionType } from '../action-types';
+import { CounterOperationType, IncrementDecrementAction } from './counter-types';
 
 interface ICounterStoreState {
     count: number;
-};
+}
 
-const defaultCounterStoreState:ICounterStoreState = {
-    count: 0
+const defaultCounterStoreState: ICounterStoreState = {
+    count: 0,
 };
 
 export function counterReducer(state: ICounterStoreState = defaultCounterStoreState, action: Action): ICounterStoreState {
-    switch(action.type) {
+    switch (action.type) {
         case ActionType.Increment:
             return  { ...state, count: state.count + 1 };
         case ActionType.Decrement:

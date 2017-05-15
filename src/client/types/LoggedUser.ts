@@ -1,5 +1,5 @@
-export interface LoggedUser {
-    id: number
-    displayName: string,
-    photoUrl: string
+export interface ILoggedUser {
+    id: number;
+    displayName: string;
+    photoUrl: string;
 }
