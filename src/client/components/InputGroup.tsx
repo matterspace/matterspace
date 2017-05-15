@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { ComponentProps } from '../types/ComponentTypes';
 
 export interface IInputGroupProps extends React.Props<{}> {
     addOnBefore: string;

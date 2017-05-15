@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import { ComponentProps } from '../types/ComponentTypes';
 import { ILoggedUser } from '../types/LoggedUser';
 
 export interface ILoggedUserDropdownProps extends React.Props<HTMLDivElement> {

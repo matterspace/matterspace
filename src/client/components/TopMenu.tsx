@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { ComponentProps } from '../types/ComponentTypes';
 import { ILoggedUser } from '../types/LoggedUser';
 import { LoggedUserDropdown } from './LoggedUserDropdown';
 
