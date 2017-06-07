@@ -79,11 +79,11 @@ export class LoggedUserDropdown extends React.Component<ILoggedUserDropdownProps
         );
     }
 
-    private componentDidMount() {
+    public componentDidMount() {
         document.addEventListener('mousedown', this.handleClickOutside);
     }
 
-    private componentWillUnmount() {
+    public componentWillUnmount() {
         document.removeEventListener('mousedown', this.handleClickOutside);
     }
 
