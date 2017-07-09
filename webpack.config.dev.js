@@ -1,5 +1,4 @@
-var webpack = require('webpack');
-const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
 
@@ -17,13 +16,9 @@ module.exports = {
 
     devtool: 'source-map',
 
-    resolve: {
-        extensions: ['.js', '.jsx', '.json', '.ts', '.tsx']
-    },
-
     module: {
         rules: [
-            { test: /\.ts|\.tsx/, use: ['react-hot-loader/webpack', 'awesome-typescript-loader'] },
+            { test: /\.ts|\.tsx/, use: ['react-hot-loader/webpack', 'awesome-typescript-loader'], exclude: /node_modules/ },
             { test: /\.css/, use: ['style-loader', 'css-loader'] },
             { test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
             { test: /\.jpe?g$|\.gif$|\.png$|\.ico$/, use: ['file-loader?name=[name].[ext]'] },
@@ -40,10 +35,15 @@ module.exports = {
         })
     ],
 
+    resolve: {
+        extensions: ['.js', '.jsx', '.json', '.ts', '.tsx']
+    },
+
     devServer: {
         port: 8080,
         headers: {
             'Access-Control-Allow-Origin': '*'
         }
     }
+
 };

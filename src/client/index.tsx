@@ -1,24 +1,24 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { configureStore } from './redux/store';
-import Router from './router';
-// tslint:disable-next-line:no-var-requires
-require('./styles/styles.scss');
-// tslint:disable-next-line:no-var-requires
+
+import Router from './Router';
+import configureStore from './redux/store';
+
+require('../../node_modules/normalize.css/normalize.css');
 require('../../node_modules/font-awesome/css/font-awesome.css');
+require('../../node_modules/react-activity/dist/react-activity.css');
+require('./styles/styles.scss');
 
-declare var module: { hot: any };
+const store = configureStore((window as any).__PRELOADED_STATE__);
 
-const store = configureStore();
-
-if (module.hot) {
-    module.hot.accept();
+if ((module as any).hot) {
+    (module as any).hot.accept();
 }
 
 ReactDOM.render(
-    <Provider store={store}>
+    <Provider store={store} >
         <Router />
     </Provider>,
-    document.getElementById("app"),
+    document.getElementById('app'),
 );

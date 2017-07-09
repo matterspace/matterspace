@@ -4,14 +4,15 @@ import {
     Route,
     Switch,
 } from 'react-router-dom';
-import App from './pages/App';
+
+// pages
+import { App } from './pages/App';
 
 const RouterPage = () => (
     <BrowserRouter>
         <Switch>
-            <Route exact={true} path="/" component={App} />
+            <Route path="/" component={App} />
         </Switch>
-    </BrowserRouter>
-);
+    </BrowserRouter>);
 
 export default RouterPage;
