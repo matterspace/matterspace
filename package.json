@@ -6,7 +6,7 @@
   "scripts": {
     "build-ts": "tsc",
     "start": "cross-env NODE_ENV=development ts-node ./src/server/index.ts",
-    "start:watch": "cross-env NODE_ENV=development nodemon --watch src --exec \"ts-node ./src/server/index.ts\"",
+    "start:watch": "cross-env NODE_ENV=development nodemon",
     "hot-server": "webpack-dev-server --hot --config ./webpack.config.dev.js",
     "test": "cross-env NODE_ENV=test mocha ./test/unit/**/*.ts ",
     "test:integration": "cross-env NODE_ENV=test mocha ./test/integration/*Spec.ts",
@@ -20,7 +20,8 @@
     "db:generate": "cross-env COMMAND=generate_scripts PGPASSWORD=matterspace ts-node ./tools/db-manager.ts",
     "db:reinstall": "npm run db:drop && npm run db:install",
     "tools:print-config": "ts-node ./tools/print-config.ts",
-    "tools:massive-repl": "massive -c postgres://matterspace:matterspace@localhost:5432/matterspace"
+    "tools:massive-repl": "massive -c postgres://matterspace:matterspace@localhost:5432/matterspace",
+    "nodemon:dump": "nodemon --dump"
   },
   "repository": {
     "type": "git",
