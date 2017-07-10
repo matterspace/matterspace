@@ -1,9 +1,9 @@
 import * as childProcess from "child_process";
 
 const selectedCommand = process.env.COMMAND;
-const dbName = 'indiejobs';
-const dbTestsName = 'indiejobs_tests';
-const userName = 'indiejobs';
+const dbName = 'matterspace';
+const dbTestsName = 'matterspace_tests';
+const userName = 'matterspace';
 
 console.log('===Starting DB Command===');
 console.log(`Executing ${selectedCommand}`);
