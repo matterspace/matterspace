@@ -47,4 +47,4 @@ const ConnectedApp = connect<AppStateProps, AppDispatchProps, AppOwnProps, AppPr
     mergeProps
 )(App);
 
-export { ConnectedApp as App }
+export { ConnectedApp as App };
