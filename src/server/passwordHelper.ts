@@ -40,7 +40,7 @@ export async function generateHashPassword(password: string): Promise<PersistedP
  * Verifies the attempted password against the password information saved in the database. This should be called when
  * the user tries to log in.
  */
-export async function verifyPassword(persistedPassword: PersistedPassword, passwordAttempt: string): Promise<boolean> {
+export async function verifyPassword(passwordAttempt: string, persistedPassword: PersistedPassword): Promise<boolean> {
     return new Promise<boolean>((accept, reject) => {
         crypto.pbkdf2(passwordAttempt, persistedPassword.salt, persistedPassword.iterations, PASSWORD_LENGTH, DIGEST, (error, hash) => {
             if (error) {
