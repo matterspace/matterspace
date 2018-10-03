@@ -1,39 +1,10 @@
 {
-    "extends": [
-        "tslint:latest",
-        "tslint-react"
-    ],
-    "rules": {
-        "quotemark": [
-            true,
-            "'"
-        ],
-        "max-line-length": [
-            false
-        ],
-        "interface-name": [
-            false
-        ],
-        "curly": false,
-        "arrow-parens": [
-            false
-        ],
-        "object-literal-sort-keys": false,
-        "member-ordering": [
-            false
-        ],
-        "jsx-no-lambda": [
-            false
-        ],
-        "max-classes-per-file": [
-            false
-        ],
-        "no-var-requires": false,
-        "ordered-imports": [
-            false
-        ],
-        "space-before-function-paren": [
-            false
-        ]
-    }
+  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+  "linterOptions": {
+    "exclude": [
+      "config/**/*.js",
+      "node_modules/**/*.ts",
+      "coverage/lcov-report/*.js"
+    ]
+  }
 }
